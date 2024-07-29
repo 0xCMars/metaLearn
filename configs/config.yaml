@@ -1,0 +1,40 @@
+seed: 7
+num_workers: 8
+log_offline: false
+
+save_every_epoch: 1
+val_every_epoch: 1
+log_every_epoch: 10
+progress_bar_refresh_rate: 1
+
+dataset:
+  csvData: "data/okx_orderbook.csv"
+  name: OKX
+
+model:
+  input_size: 20
+  seq_len: 2
+  hidden_size: 64
+  num_layers: 1
+  output_size: 1
+
+hyper_parameters:
+  vector_length: 20
+
+  n_epochs: 50
+  patience: 10
+  batch_size: 64
+  test_batch_size: 64
+  reload_dataloader: true
+  clip_norm: 5
+  val_every_step: 1.0
+  log_every_n_steps: 50
+  progress_bar_refresh_rate: 1
+  resume_from_checkpoint: null
+  shuffle_data: true
+
+  optimizer: "Adam"
+  nesterov: true
+  learning_rate: 0.002
+  weight_decay: 0
+  decay_gamma: 0.95
